@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-import com.web.techNet.config.StorageProperties;
+import com.web.techNet.storageConfig.StorageProperties;
 
 @EnableConfigurationProperties(StorageProperties.class)
 @SpringBootApplication

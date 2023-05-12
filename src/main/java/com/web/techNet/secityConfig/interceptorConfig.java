@@ -1,6 +1,5 @@
 package com.web.techNet.secityConfig;
 
-import com.web.techNet.interceptor.GlobalInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

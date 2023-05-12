@@ -77,13 +77,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutUrl("/security/logoff")
                 .logoutSuccessUrl("/security/logoff/success");
 
-        http.oauth2Login()
-                .loginPage("/security/login/form")
-                .defaultSuccessUrl("/oauth2/login/success", true)
-                .failureUrl("/security/login/error")
-                .authorizationEndpoint()
-                .baseUri("/oauth2/authorization");
-
     }
 
     // Cho phep truy xuat Rest API ben ngoai Domain khac
