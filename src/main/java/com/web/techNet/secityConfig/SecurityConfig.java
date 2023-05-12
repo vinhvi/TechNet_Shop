@@ -42,8 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 Optional<Account> user = accountService.findById(username);
                 String password = pe.encode(user.get().getPassword());
                 String[] roles = user.get().getAuthorities().stream()
-                        .map(er -> er.getRole().getRoleId())
-                        .collect(Collectors.toList()).toArray(new String[0]);
+                        .map(er -> er.getRole().getRoleId()).toArray(String[]::new);
                 return User.withUsername(username).password(password).roles(roles).build();
             } catch (NoSuchElementException e) {
                 throw new UsernameNotFoundException(username + "not Found");
@@ -71,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.rememberMe().tokenValiditySeconds(86400);
 
-        http.exceptionHandling().accessDeniedPage("/security/unauthoried");
+        http.exceptionHandling().accessDeniedPage("/security/unauthorized");
 
         http.logout()
                 .logoutUrl("/security/logoff")

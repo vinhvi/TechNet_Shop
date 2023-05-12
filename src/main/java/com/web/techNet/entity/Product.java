@@ -49,8 +49,6 @@ public class Product implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private List<OrderDetail> orderDetails;
-	@JsonIgnore
-	@OneToMany(mappedBy = "product")
-	List<Comment> comments;
+
 
 }

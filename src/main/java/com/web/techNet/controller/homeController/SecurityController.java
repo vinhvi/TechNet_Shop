@@ -15,12 +15,6 @@ public class SecurityController {
     @Autowired
     AccountService accountService;
 
-    @RequestMapping("/oauth2/login/success")
-    public String success(OAuth2AuthenticationToken oauth2) {
-        accountService.loginFormOAuth2(oauth2);
-        return "forward:/security/login/success";
-    }
-
     @RequestMapping("/security/login/form")
     public String loginPage(Model model) {
         model.addAttribute("message", "Vui lòng đăng nhập!");

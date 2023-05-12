@@ -15,84 +15,53 @@ import com.web.techNet.entity.Account;
 
 public interface AccountService {
 
-	<S extends Account> List<S> findAll(Example<S> example, Sort sort);
+    <S extends Account> List<S> findAll(Example<S> example, Sort sort);
 
-	<S extends Account> List<S> findAll(Example<S> example);
+    <S extends Account> List<S> findAll(Example<S> example);
 
-	void deleteAll();
+    void deleteAll();
 
-	Account getReferenceById(String id);
+    Account findByUsername(String username);
 
-	Account findByUsername(String username);
+    void deleteAll(Iterable<? extends Account> entities);
 
-	void deleteAll(Iterable<? extends Account> entities);
+    void delete(Account entity);
 
-	void deleteAllById(Iterable<? extends String> ids);
+    Account getOne(String id);
 
-	Account getById(String id);
+    void deleteById(String id);
 
-	void delete(Account entity);
+    long count();
+    
+    <S extends Account> long count(Example<S> example);
 
-	Account getOne(String id);
 
-	void deleteById(String id);
+    Optional<Account> findById(String id);
 
-	void deleteAllInBatch();
+    <S extends Account> Page<S> findAll(Example<S> example, Pageable pageable);
 
-	long count();
 
-	<S extends Account, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction);
+    void flush();
 
-	void deleteAllByIdInBatch(Iterable<String> ids);
 
-	<S extends Account> boolean exists(Example<S> example);
+    List<Account> findAll(Sort sort);
 
-	void deleteAllInBatch(Iterable<Account> entities);
+    Page<Account> findAll(Pageable pageable);
 
-	<S extends Account> long count(Example<S> example);
+    List<Account> findAll();
 
-	boolean existsById(String id);
+    <S extends Account> Optional<S> findOne(Example<S> example);
 
-	void deleteInBatch(Iterable<Account> entities);
+    <S extends Account> S save(S entity);
 
-	Optional<Account> findById(String id);
+    public void updateResetPasswordToken(String token, String email);
 
-	<S extends Account> Page<S> findAll(Example<S> example, Pageable pageable);
+    public void updatePassword(Account account, String newPassword);
 
-	<S extends Account> List<S> saveAllAndFlush(Iterable<S> entities);
+    public Account get(String resetPasswordToken);
 
-	<S extends Account> S saveAndFlush(S entity);
+    Page<Account> findByFullnameContaining(String fullname, Pageable pageable);
 
-	void flush();
-
-	<S extends Account> List<S> saveAll(Iterable<S> entities);
-
-	List<Account> findAllById(Iterable<String> ids);
-
-	List<Account> findAll(Sort sort);
-
-	Page<Account> findAll(Pageable pageable);
-
-	List<Account> findAll();
-
-	<S extends Account> Optional<S> findOne(Example<S> example);
-
-	<S extends Account> S save(S entity);
-
-	List<Account> findByUsernameContaining(String username);
-
-	public List<Account> getAdministrators();
-
-	void loginFormOAuth2(OAuth2AuthenticationToken oauth2);
-
-	public void updateResetPasswordToken(String token, String email);
-
-	public void updatePassword(Account account, String newPassword);
-
-	public Account get(String resetPasswordToken);
-
-	Page<Account> findByFullnameContaining(String fullname, Pageable pageable);
-
-	long countByFullnameContaining(String fullname);
+    long countByFullnameContaining(String fullname);
 
 }

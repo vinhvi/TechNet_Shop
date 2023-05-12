@@ -174,10 +174,6 @@ public class AccountAdminController {
 
 		try {
 			if (opt.isPresent()) {
-				// if (!StringUtils.isEmpty(opt.get().getImage())) {
-				// storageService.delete(opt.get().getImage());
-				// }
-				// orderService.deleteOrderByUsername(username);
 				accountService.delete(opt.get());
 				model.addAttribute("message", "Tài khoản đã được xóa!");
 			} else {

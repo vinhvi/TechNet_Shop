@@ -198,9 +198,6 @@ public class ProductAdminController {
             Optional<Product> opt = productService.findById(productId);
 
             if (opt.isPresent()) {
-                // if (!StringUtils.isEmpty(opt.get().getImage1())) {
-                // storageService.delete(opt.get().getImage1());
-                // }
                 productService.delete(opt.get());
                 model.addAttribute("message", "Sản phẩm đã được xóa!");
             }
