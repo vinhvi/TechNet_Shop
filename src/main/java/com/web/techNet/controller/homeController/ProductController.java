@@ -471,28 +471,4 @@ public class ProductController {
         return "product/list_search";
     }
 
-    @RequestMapping("/phu-kien")
-    public String phu_kien__sac(Model model) {
-        model.addAttribute("phukien", pdao.findByPhuKien("sạc dự phòng"));
-        // get totalsize item
-        List<Product> items = pdao.findByPhuKien("sạc dự phòng");
-        int totalItems = items.size();
-        model.addAttribute("totalItems", totalItems);
-        // get totalsize item
-        list_All_Items(model, productService);
-        return "product/list_search";
-    }
-
-    @RequestMapping("/dtdd-sac-nhanh")
-    public String sac_nhanh1(Model model) {
-        model.addAttribute("phukien", pdao.findByPhuKien("sạc dự phòng"));
-        // get totalsize item
-        List<Product> items = pdao.findByPhuKien("sạc dự phòng");
-        int totalItems = items.size();
-        model.addAttribute("totalItems", totalItems);
-        // get totalsize item
-        list_All_Items(model, productService);
-        return "product/list_search";
-    }
-
 }
