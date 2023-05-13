@@ -15,8 +15,6 @@ import com.web.techNet.entity.Account;
 
 public interface AccountService {
 
-    <S extends Account> List<S> findAll(Example<S> example, Sort sort);
-
     <S extends Account> List<S> findAll(Example<S> example);
 
     void deleteAll();
@@ -35,14 +33,11 @@ public interface AccountService {
     
     <S extends Account> long count(Example<S> example);
 
-
     Optional<Account> findById(String id);
 
     <S extends Account> Page<S> findAll(Example<S> example, Pageable pageable);
 
-
     void flush();
-
 
     List<Account> findAll(Sort sort);
 

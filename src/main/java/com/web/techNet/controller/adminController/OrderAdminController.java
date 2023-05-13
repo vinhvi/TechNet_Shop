@@ -197,7 +197,6 @@ public class OrderAdminController {
 
 		try {
 			if (opt.isPresent()) {
-				// orderDetailService.deleteOrderDetailsByOrderId(orderId);
 				orderService.delete(opt.get());
 				model.addAttribute("message", "Đơn hàng đã bị xóa!");
 			} else {

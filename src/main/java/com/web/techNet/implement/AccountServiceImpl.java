@@ -104,10 +104,6 @@ public class AccountServiceImpl implements AccountService {
         return accountRepo.findAll(example);
     }
 
-    @Override
-    public <S extends Account> List<S> findAll(Example<S> example, Sort sort) {
-        return accountRepo.findAll(example, sort);
-    }
 
     // reset password
     public void updateResetPasswordToken(String token, String email) {

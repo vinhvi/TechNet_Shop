@@ -34,7 +34,4 @@ public class Account implements Serializable {
     List<Authority> authorities;
 
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "account")
-    List<Feedback> feedbacks;
 }

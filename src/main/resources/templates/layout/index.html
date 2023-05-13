@@ -91,8 +91,6 @@
                             <i class="fa-brands fa-gratipay"></i> [[#{nav.Favorite}]]</a>
                         <a class="dropdown-item" id="btn_search" th:href="@{/forgot_password}">
                             <i class="fa-solid fa-pen-nib"></i> [[#{nav.change_password}]]</a>
-                        <a class="dropdown-item" id="btn_search" th:href="@{|/user/feedback/${#request.remoteUser}|}">
-                            <i class="fa-solid fa-pen"></i> [[#{nav.Feedback}]]</a>
                         <hr class="dropdown-divider" />
                         <a class="dropdown-item"id="btn_search" th:href="@{/security/logoff}">
                             <i class="fa-solid fa-power-off"></i> [[#{nav.sign_out}]]</a>
@@ -106,20 +104,20 @@
     <div class="container">
         <div class="menu-bar-content">
             <ul>
-                <li><a href="/product/list?cid=2">
+                <li><a href="/product/list?cid=1">
                     <i class='fa fa-wifi'></i>
                     <lable>Router Wifi</lable>
                 </a></li>
-                <li><a href="/product/list?cid=3">
+                <li><a href="/product/list?cid=2">
                     <i class='fa-solid fa-square-rss'></i> Wifi Mesh</a></li>
-                <li><a href="/product/list?cid=4"><i class='fa fa-rss'></i> Bộ phát Wifi di động</a></li>
-                <li><a href="/product/list?cid=5"><i class='fas fa-network-wired'></i>
+                <li><a href="/product/list?cid=3"><i class='fa fa-rss'></i> Bộ phát Wifi di động</a></li>
+                <li><a href="/product/list?cid=4"><i class='fas fa-network-wired'></i>
                     <lable>Bộ chia mạng</lable>
                 </a></li>
-                <li><a href="/product/list?cid=2005"><i class='fas fa-code-branch'></i>
+                <li><a href="/product/list?cid=5"><i class='fas fa-code-branch'></i>
                     <lable>Bộ mở rộng sóng</lable>
                 </a></li>
-                <li><a href="/product/list?cid=8"><i class="fab fa-usb"></i>
+                <li><a href="/product/list?cid=6"><i class="fab fa-usb"></i>
                     <lable>USB Wifi</lable>
                 </a></li>
             </ul>
@@ -158,75 +156,57 @@
         <h2 class="ShopNow-footer-section__heading">
 				<span style="font-size: 12px"><span
                         style="font-family: Roboto, sans-serif"><span
-                        style="color: #000000"><b>MUA SẮM VÀ BÁN HÀNG ONLINE
-								ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</b></span></span></span>
+                        style="color: #000000"><b>TechNetShop - Mua sắm thiết bị mạng trực tuyến đơn giản,
+                    nhanh chóng và an toàn</b></span></span></span>
         </h2>
         <p class="ShopNow-footer-section__content">
 				<span style="font-size: 12px"><span
                         style="font-family: Roboto, sans-serif"><span
-                        style="color: #000000">Nếu bạn đang tìm kiếm một trang web
-							để mua và bán hàng trực tuyến thì Shopnow.vn là một sự lựa chọn
-							tuyệt vời dành cho bạn. Bản chất của Shop now là một social
-							E-commerce platform - nền tảng trang web <b>thương mại điện
-								tử</b> tích hợp mạng xã hội. Điều này cho phép người mua và người
-							bán hàng dễ dàng tương tác, trao đổi thông tin về sản phẩm và
-							chương trình khuyến mãi của shop. Nhờ nền tảng đó, việc mua bán
-							trên Shopnow trở nên nhanh chóng và đơn giản hơn. Bạn có thể trò
-							chuyện trực tiếp với nhà bán hàng để hỏi trực tiếp về mặt hàng
-							cần mua. Còn nếu bạn muốn tìm mua những dòng sản phẩm chính hãng,
-							uy tín,
+                        style="color: #000000">Nếu bạn đang tìm kiếm một cửa hàng trực tuyến để mua sắm
+                    các thiết bị mạng thì TechNetShop là sự lựa chọn hoàn hảo dành cho bạn.
+                    Với phương châm đơn giản và tiện lợi, TechNetShop sẽ giúp bạn tiết kiệm
+                    thời gian và tiền bạc khi mua sắm. Với nền tảng trang web thương mại điện
+                    tử tiên tiến, bạn có thể dễ dàng tìm kiếm sản phẩm và tìm hiểu thông tin
+                    về chúng. Chúng tôi cam kết cung cấp cho bạn các sản phẩm chính hãng, chất
+                    lượng với giá cả hợp lý.
 					</span></span><u><a style="color: inherit" href=""><span
-                        style="font-family: Roboto, sans-serif"><b><u>Shopnow
-										Mall</u></b></span></a></u><span style="font-family: Roboto, sans-serif"><span
-                        style="color: #000000"> chính là sự lựa chọn lí tưởng dành
-							cho bạn. Để bạn có thể dễ dàng khi tìm hiểu và sử dụng sản phẩm,
+                        style="font-family: Roboto, sans-serif"><b><u>TechNetShop Mall</u></b></span></a></u><span
+                        style="font-family: Roboto, sans-serif"><span
+                        style="color: #000000"> là nơi bạn có thể tìm thấy các sản phẩm chính hãng từ các
+                    thương hiệu nổi tiếng như Cisco, Huawei, TP-Link, Netgear và nhiều hãng khác.
+                    Để giúp bạn hiểu rõ hơn về sản phẩm và sử dụng chúng hiệu quả,
 					</span></span><u><a style="color: inherit" href=""><span
-                        style="font-family: Roboto, sans-serif"><b><u>Shop
-										now Blog</u></b></span></a></u><span style="font-family: Roboto, sans-serif"><u><a
+                        style="font-family: Roboto, sans-serif"><b><u>TechNetShop Blog</u></b></span></a></u><span
+                        style="font-family: Roboto, sans-serif"><u><a
                         style="color: inherit" href=""> - <b>trang
-									blog thông tin chính thức của Shop now</b></a></u><span
+									blog thông tin chính thức của TechNetShop</b></a></u><span
                         style="color: #000000"> Sẽ giúp bạn có thể tìm được cho
 							mình các kiến thức về xu hướng thời trang, review công nghệ, mẹo
 							làm đẹp, tin tức tiêu dùng và deal giá tốt bất ngờ.</span></span></span>
         <hr>
-        <span style="font-size: 12px"><b>MUA HÀNG CHÍNH HÃNG TỪ CÁC THƯƠNG HIỆU LỚN VỚI SHOPNOW</b><br>
-								Mua hàng trên ShopNow luôn là một trải nghiệm ấn tượng. Dù bạn đang có nhu cầu mua bất kỳ
-								mặt hàng thời trang nam,thời trang nữ,đồng hồ, điện thoại,nước rửa tay khô hay 
-								khẩu trang N95 thì ShopNow cũng sẽ đảm bảo cung cấp cho bạn những sản phẩm ưng ý. 
-								Bên cạnh đó, ShopNow cũng có sự tham gia của các thương hiệu hàng đầu thế giới ở 
-								đa dạng nhiều lĩnh vực khác nhau. Trong đó có thể kể đến Samsung, OPPO, Xiaomi, 
-								Innisfree, Unilever, P&G, Biti’s,...Các thương hiệu này hiện cũng đã có cửa hàng 
-								chính thức trên ShopNow Mall với hàng trăm mặt hàng chính hãng, được cập nhập liên tục. 
-								Là một kênh bán hàng uy tín, ShopNow luôn cam kết mang lại cho khách hàng những 
-								trải nghiệm mua sắm online giá rẻ, an toàn và tin cậy. Mọi thông tin về người bán 
-								và người mua đều được bảo mật tuyệt đối. Các hoạt động giao dịch thanh toán tại 
-								ShopNow luôn được đảm bảo diễn ra nhanh chóng, an toàn. Một vấn đề nữa khiến cho 
-								các khách hàng luôn quan tâm đó chính là mua hàng trên ShopNow có đảm bảo không.
-								ShopNow luôn cam kết mọi sản phẩm trên ShopNow, đặc biệt là ShopNow Mall đều là
-								những sản phẩm chính hãng, đầy đủ tem nhãn, bảo hành từ nhà bán hàng. 
-								Ngoài ra, ShopNow bảo vệ người mua và người bán bằng cách giữ số tiền giao dịch 
-								đến khi người mua xác nhận đồng ý với đơn hàng và không có yêu cầu khiếu nại, 
-								trả hàng hay hoàn tiền nào. Thanh toán sau đó sẽ được chuyển đến cho người bán. 
-								Đến với ShopNow ngay hôm nay để mua hàng online giá rẻ và trải nghiệm dịch vụ 
-								chăm sóc khách hàng tuyệt vời tại đây. Đặc biệt khi mua sắm trên ShopNow Mall, 
-								bạn sẽ được miễn phí vận chuyển, giao hàng tận nơi và 7 ngày miễn phí trả hàng. 
-								Ngoài ra, khách hàng có thể sử dụngShopNow Xu để đổi lấy mã giảm giá có giá trị 
-								cao và voucher dịch vụ hấp dẫn. Tiếp đến là ShopNow Home Club, ShopNow Mum Club, 
-								ShopNow Beauty Club vàShopNow Book Club với các ưu đãi độc quyền từ các thương 
-								hiệu lớn có những khách hàng đã đăng ký làm thành viên. Hãy truy cập ngay ShopNow.
-								vn hoặc tải ngay ứng dụng ShopNow về điện thoại ngay hôm nay!</span>
+        <span style="font-size: 12px"><b>MUA HÀNG CHÍNH HÃNG TỪ CÁC THƯƠNG HIỆU LỚN VỚI TechNetShop</b><br>
+								Mua sắm thiết bị mạng trên TechNetShop sẽ mang đến cho bạn một
+            trải nghiệm mua sắm online tuyệt vời. Với đa dạng các sản phẩm chính hãng từ các thương hiệu hàng đầu thế giới, bạn có thể yên tâm tìm thấy những sản phẩm ưng ý
+            cho mình. TechNetShop cam kết đảm bảo tính bảo mật cho cả người bán và người mua,
+            cùng với các hoạt động giao dịch thanh toán nhanh chóng, an toàn. Tất cả các sản
+            phẩm trên TechNetShop đều là chính hãng, đầy đủ tem nhãn và bảo hành từ nhà bán hàng.
+            Bên cạnh đó, khi mua sắm trên TechNetShop, bạn còn được miễn phí vận chuyển, giao hàng
+            tận nơi và 7 ngày miễn phí trả hàng. TechNetShop còn mang đến cho bạn các ưu đãi độc quyền
+            từ các chương trình thành viên như TechNet Club, TechNet Beauty Club, và TechNet Book Club,
+            với nhiều quà tặng hấp dẫn. Truy cập ngay vào trang web của TechNetShop hoặc tải ngay ứng
+            dụng để khám phá và trải nghiệm mua sắm tuyệt vời ngay hôm nay!</span>
         <hr>
-        <span><h2>ShopNow Affiliate Program</h2><br>
+        <span><h2>TechNetShop Affiliate Program</h2><br>
 									<b>Thông tin liên lạc</b> <br>
-									Địa chỉ: 21 Đ. Phú Thạnh 1, Hòa Khánh Bắc, Quận Liên Chiểu, Thành phố Đà Nẵng <br>
+									Địa chỉ: 209/1 Cây Trâm, phường 8, quận Gò Vấp, TP.HCM <br>
 									Tổng đài: 1900 1221 <br>
-									Email: support@shopnow.vn</span>
+									Email: vivinhdev@gmail.com</span>
         <hr>
-        <img>Theo dõi ShopNow Affiliate Program tại <a href="https://www.facebook.com/ThucSkin202"><img
+        <img>Theo dõi TechNetSHop Affiliate Program tại <a href="https://www.facebook.com/taimatroioi"><img
             src="/assets/images/fb1.png"></a></h4>
         </p>
     </div>
-    <div style="float: right;" class="mb-3">Shop Now &copy;2022.All rights
+    <div style="float: right;" class="mb-3">TechNetShop &copy;2023.All rights
         reserved.
     </div>
 
