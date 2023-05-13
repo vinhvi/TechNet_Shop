@@ -15,13 +15,21 @@ import com.web.techNet.entity.Account;
 
 public interface AccountService {
 
+    <S extends Account> List<S> findAll(Example<S> example, Sort sort);
+
     <S extends Account> List<S> findAll(Example<S> example);
 
     void deleteAll();
 
+    Account getReferenceById(String id);
+
     Account findByUsername(String username);
 
     void deleteAll(Iterable<? extends Account> entities);
+
+    void deleteAllById(Iterable<? extends String> ids);
+
+    Account getById(String id);
 
     void delete(Account entity);
 
@@ -29,15 +37,37 @@ public interface AccountService {
 
     void deleteById(String id);
 
+    void deleteAllInBatch();
+
     long count();
-    
+
+    <S extends Account, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction);
+
+    void deleteAllByIdInBatch(Iterable<String> ids);
+
+    <S extends Account> boolean exists(Example<S> example);
+
+    void deleteAllInBatch(Iterable<Account> entities);
+
     <S extends Account> long count(Example<S> example);
+
+    boolean existsById(String id);
+
+    void deleteInBatch(Iterable<Account> entities);
 
     Optional<Account> findById(String id);
 
     <S extends Account> Page<S> findAll(Example<S> example, Pageable pageable);
 
+    <S extends Account> List<S> saveAllAndFlush(Iterable<S> entities);
+
+    <S extends Account> S saveAndFlush(S entity);
+
     void flush();
+
+    <S extends Account> List<S> saveAll(Iterable<S> entities);
+
+    List<Account> findAllById(Iterable<String> ids);
 
     List<Account> findAll(Sort sort);
 
@@ -48,6 +78,12 @@ public interface AccountService {
     <S extends Account> Optional<S> findOne(Example<S> example);
 
     <S extends Account> S save(S entity);
+
+    List<Account> findByUsernameContaining(String username);
+
+    public List<Account> getAdministrators();
+
+    void loginFormOAuth2(OAuth2AuthenticationToken oauth2);
 
     public void updateResetPasswordToken(String token, String email);
 

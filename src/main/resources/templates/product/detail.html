@@ -4,7 +4,7 @@
 <body>
     <main th:object="${item}" class="container-fluid">
         <div class="category-title">
-            <div>[[#{detail.name}]]:</div>
+            <div>Thông tin: </div>
             <div class="category-name">[(*{category.name})].</div>
         </div>
         <div class="row">
@@ -26,11 +26,11 @@
                     </div>
                     <div class="col-sm-7">
                         <fieldset class="list_item_detail">
-                            <li>[[#{cart.name}]]: <label class="category-name">[(*{name})]</label></li>
+                            <li>[[#{cart.name}]]: <label class="category-name">[(*{name})] [(*{radius})].</label></li>
                             <li>[[#{cart.price}]]: <label class="price">[[*{#numbers.formatInteger(unitPrice, 0,
-                                    'DEFAULT')}]] <sup>đ</sup></label></li>
+                                'DEFAULT')}]] <sup>đ</sup></label></li>
                             <li><label class="old_price">[[*{#numbers.formatInteger(oldPrice, 0, 'DEFAULT')}]]
-                                    <sup>đ</sup></label></li>
+                                <sup>đ</sup></label></li>
                             <li><label class="percent-oldProduct">Tiết kiệm [(*{discount})]%</label></li>
                             <li><span class="badge badge-danger">[[#{detail.des}]] </li>
                             <div class="discription">[(*{discription})]</div>
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <div class="bot mt-2">
                                     <button th:attr="ng-click=@{|cart.add(${item.productId})|}"
-                                        class="btn btn-success btn__confirm" id="btn_search">
+                                            class="btn btn-success btn__confirm" id="btn_search">
                                         <i class="fas fa-shopping-cart"></i> <a th:text="#{product.btn.cart}"></a>
                                     </button>
                                 </div>
