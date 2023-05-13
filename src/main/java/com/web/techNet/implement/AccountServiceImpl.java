@@ -1,29 +1,21 @@
 
 package com.web.techNet.implement;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-
-import com.web.techNet.entity.Authority;
-import com.web.techNet.entity.Role;
+import com.web.techNet.entity.Account;
+import com.web.techNet.repository.AccountRepo;
+import com.web.techNet.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.web.techNet.repository.AccountRepo;
-import com.web.techNet.entity.Account;
-import com.web.techNet.service.AccountService;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -45,6 +37,9 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public <S extends Account> S save(S entity) {
+//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        String encodepassword = passwordEncoder.encode(entity.getPassword());
+//        entity.setPassword(encodepassword);
         return adao.save(entity);
     }
 
@@ -204,63 +199,6 @@ public class AccountServiceImpl implements AccountService {
         return adao.getAdministratiors();
     }
 
-    // Luu vào CSDL
-    @Override
-    public void loginFormOAuth2(OAuth2AuthenticationToken oauth2) {
-        // // Lấy tất cả các thuộc tính của người dùng
-        // Map<String, Object> attributes = oauth2.getPrincipal().getAttributes();
-        // // In ra console
-        // for (Map.Entry<String, Object> entry : attributes.entrySet()) {
-        // String key = entry.getKey();
-        // Object value = entry.getValue();
-        // System.out.println(key + ": " + value);
-        // }
-        String email = oauth2.getPrincipal().getAttribute("email");
-        String username = email.substring(0, email.indexOf("@")).trim();
-        String password = Long.toHexString(System.currentTimeMillis());
-        String address = oauth2.getPrincipal().getAttribute("address");
-        String fullname = oauth2.getPrincipal().getAttribute("name");
-        String phone = oauth2.getPrincipal().getAttribute("phone");
-        String picture = oauth2.getPrincipal().getAttribute("picture");
-        String id = oauth2.getPrincipal().getAttribute("sub");
-
-        // Tạo tài khoản mới từ thông tin được truyền vào
-        Account account = new Account();
-        account.setUsername(username);
-        account.setPassword(password);
-        account.setFullname(fullname);
-        account.setEmail(email);
-        account.setAddress(address);
-        account.setImage(picture); // thêm ảnh
-        account.setTelePhone(phone);
-
-        // Thêm quyền vào tài khoản
-        List<Authority> authorities = account.getAuthorities();
-        if (authorities == null) {
-            authorities = new ArrayList<Authority>();
-            account.setAuthorities(authorities);
-        }
-        Role role = new Role();
-        if (username.equals("thucfc2002")) {
-            role.setRoleId("DIRE");
-        } else {
-            role.setRoleId("CUST");
-        }
-        Authority authority = new Authority();
-        authority.setAccount(account);
-        authority.setRole(role);
-        authorities.add(authority);
-
-        // Lưu thông tin tài khoản vào trong CSDL
-        accountService.save(account);
-
-        // Đánh dấu việc đăng nhập thành công bằng cách set đối tượng Authentication vào
-        // trong SecurityContextHolder
-        UserDetails user = User.withUsername(username).password(password).roles(role.getRoleId()).build();
-        Authentication auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-        SecurityContextHolder.getContext().setAuthentication(auth);
-    }
-
     // reset password
     public void updateResetPasswordToken(String token, String email) {
         Account account = adao.findByEmail(email);
@@ -276,11 +214,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public void updatePassword(Account account, String newPassword) {
-        // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        // String encodepassword = passwordEncoder.encode(newPassword);
+         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+         String encodepassword = passwordEncoder.encode(newPassword);
 
-        account.setPassword(newPassword);
-        account.setReset_password(null);
+        account.setPassword(encodepassword);
+        account.setReset_password(encodepassword);
 
         adao.save(account);
     }

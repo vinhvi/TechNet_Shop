@@ -26,20 +26,20 @@
                     </div>
                     <div class="col-sm-7">
                         <fieldset class="list_item_detail">
-                            <li>[[#{cart.name}]]: <label class="category-name">[(*{name})] [(*{radius})].</label></li>
-                            <li>[[#{cart.price}]]: <label class="price">[[*{#numbers.formatInteger(unitPrice, 0,
+                            <li>Tên sản phẩm: <label class="category-name">[(*{name})] [(*{radius})].</label></li>
+                            <li>Giá tiền: <label class="price">[[*{#numbers.formatInteger(unitPrice, 0,
                                 'DEFAULT')}]] <sup>đ</sup></label></li>
                             <li><label class="old_price">[[*{#numbers.formatInteger(oldPrice, 0, 'DEFAULT')}]]
                                 <sup>đ</sup></label></li>
                             <li><label class="percent-oldProduct">Tiết kiệm [(*{discount})]%</label></li>
-                            <li><span class="badge badge-danger">[[#{detail.des}]] </li>
+                            <li><span class="badge badge-danger">Thông tin chi tiết </li>
                             <div class="discription">[(*{discription})]</div>
                             <hr>
                             <div class="form-group">
                                 <div class="bot mt-2">
                                     <button th:attr="ng-click=@{|cart.add(${item.productId})|}"
                                             class="btn btn-success btn__confirm" id="btn_search">
-                                        <i class="fas fa-shopping-cart"></i> <a th:text="#{product.btn.cart}"></a>
+                                        <i class="fas fa-shopping-cart"></i> <a >Thêm vào giỏ hàng</a>
                                     </button>
                                 </div>
                             </div>

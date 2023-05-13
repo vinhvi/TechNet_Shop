@@ -83,7 +83,6 @@ public interface AccountService {
 
     public List<Account> getAdministrators();
 
-    void loginFormOAuth2(OAuth2AuthenticationToken oauth2);
 
     public void updateResetPasswordToken(String token, String email);
 

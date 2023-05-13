@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             try {
                 Optional<Account> user = accountService.findById(username);
                 String password = pe.encode(user.get().getPassword());
+
                 String[] roles = user.get().getAuthorities().stream()
                         .map(er -> er.getRole().getRoleId()).toArray(String[]::new);
                 return User.withUsername(username).password(password).roles(roles).build();
