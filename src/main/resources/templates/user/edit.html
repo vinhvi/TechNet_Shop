@@ -15,7 +15,7 @@
 								alt="avatar"
 								th:src="${account.image != null? '/info/images/' + account.image : '/assets/images/noimage.jpg'}"
 								src="/assets/images/noimage.jpg">
-							<h6>[[#{info.avata}]]</h6>
+							<h6>Ảnh đại diện</h6>
 							<div class="">
 								<script>
 									function chooseFile(fileInput) {
@@ -40,7 +40,7 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="row mb-5 mt-4 card-title">
-							<h4><i class="fa-solid fa-pen-to-square"></i> [[#{info.tit}]]</h4>
+							<h4><i class="fa-solid fa-pen-to-square"></i> Thông Tin Khách Hàng</h4>
 						</div>
 						<div th:if="${message != null}" class="alert alert-primary" role="alert"> 
 							<i>[[${message}]]</i>
@@ -64,14 +64,14 @@
 							</div>
 							<div class="col-sm-6 ">
 								<i class="fa-solid fa-user"></i> 
-								<label>[[#{info.name}]]</label>:
+								<label>Họ và tên</label>:
 								<div class="form-floating mb-3">
 									<input th:field="*{fullname}" type="text" name="fullname" placeholder="Họ và tên" class="form-control">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<i class="fa-solid fa-phone"></i>
-								<label>[[#{info.sdt}]]</label>:
+								<label>SDT</label>:
 								<div class="form-floating mb-3">
 									<input th:field="*{telePhone}" type="text" minlength="10" maxlength="10" name="telePhone" placeholder="Số điện thoại" class="form-control">
 								</div>
@@ -85,14 +85,14 @@
 							</div>
 							<div class="col-sm-12">
 								<i class="fa-solid fa-address-book"></i>
-								<label>[[#{info.address}]]</label>:
+								<label>Địa chỉ</label>:
 								<textarea th:field="*{address}" placeholder="Địa chỉ" rows="3"
 										class="mt-2 form-control description">
                                 </textarea>
 							</div>
 							<div class="col-sm-12">
 								<button class="btn btn-danger btn-save">
-									[[#{info.save}]]
+									Lưu
 								</button>
 							</div>
 						</div>

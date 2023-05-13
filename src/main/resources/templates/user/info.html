@@ -11,19 +11,19 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <img th:src="@{|/assets/images/${acc.image}|}"
 								src="/assets/images/noimage.jpg"
                             class="avatar rounded-circle" alt="avatar"> 
-                        <h6>[[#{info.avata}]]</h6>
+                        <h6>Ảnh đại diện</h6>
                     </div>    
                 </div>
             </div>
             <div class="col-sm-8" >
                 <div class="p-3 py-5">
                     <div class="row mb-3 card-title">
-                        <h4><label><i class="fa-solid fa-pen-to-square"></i> [[#{info.title}]]</label></h4>
+                        <h4><label><i class="fa-solid fa-pen-to-square"></i> Thông Tin Tài Khoản</label></h4>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <i class="fa-solid fa-user"></i> 
-                            <label>[[#{info.name}]]</label>:
+                            <label>Họ và tên</label>:
                             <div class="form-floating mb-3">
                                 <div type="text" class="form-control" id="floatingInputUsername"
                                     placeholder="Fullname" required autofocus>[(${acc.fullname})]
@@ -32,7 +32,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         </div>
                         <div class="col-sm-6">
                             <i class="fa-solid fa-phone"></i>
-                            <label>[[#{info.sdt}]]</label>:
+                            <label>SDT</label>:
                             <div class="form-floating mb-3">
                                 <div type="text" class="form-control" id="floatingInputPhonenumber"
                                     placeholder="Phone number" required>[(${acc.telePhone})]  
@@ -50,7 +50,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         </div>
                         <div class="col-sm-12">
                             <i class="fa-solid fa-address-book"></i>
-                            <label>[[#{info.address}]]</label>:
+                            <label>Địa chỉ</label>:
                             <textarea class="form-control" readonly rows="3">
                                 [(${acc.address})]
                             </textarea>
@@ -58,7 +58,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <div class="col-sm-10 mt-2">
                             <div class="col-sm-6">
                                 <a th:href="@{|/info/edit/${acc.username}|}" class="btn btn-lg btn-warning custom btn-block btn-edit fw-bold text-uppercase my-2">
-                                    <label>[[#{info.edit}]]</label>
+                                    <label>Chỉnh Sửa</label>
                                 </a>
                             </div>
                         </div>

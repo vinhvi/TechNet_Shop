@@ -78,10 +78,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    // Cho phep truy xuat Rest API ben ngoai Domain khac
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
-    }
-
 }

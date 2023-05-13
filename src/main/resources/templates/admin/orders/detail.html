@@ -6,20 +6,20 @@
     <main th:object="${order}" class="container">
         <form class="container">
             <div class="text-center">
-                <h2 class="alert mb-5"><i class="fa-solid fa-circle-info"></i> <lable th:text="#{detail.title}"></lable></h2>
+                <h2 class="alert mb-5"><i class="fa-solid fa-circle-info"></i> <lable >Thông tin đơn hàng</lable></h2>
             </div>
             <div class="col-md-9 mx-auto order-md-1">
                 <div class="row">                  
                     <div class="col-md-6">
-                        <label><i class="fa-solid fa-pen-nib"></i> <lable th:text="#{checkout.name}"></lable></label>
+                        <label><i class="fa-solid fa-pen-nib"></i> <lable >Tên khách hàng</lable></label>
                         <input th:field="*{name}" class="form-control" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label><i class="fa-solid fa-calendar-days"></i> <lable th:text="#{order.date}"></lable>:</label>
+                        <label><i class="fa-solid fa-calendar-days"></i> <lable >Ngày đặt hàng</lable>:</label>
                         <input class="form-control" th:field="*{createDay}" readonly></input>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <label><i class="fa-solid fa-phone"></i> <lable th:text="#{order.phone}"></lable>:</label>
+                        <label><i class="fa-solid fa-phone"></i> <lable >SDT</lable>:</label>
                         <input th:field="*{telePhone}" class="form-control" readonly>
                     </div>
                     <div class="col-md-6 mt-3">
@@ -27,13 +27,13 @@
                         <input class="form-control" th:field="*{email}" readonly></input>                       
                     </div>
                     <div class="col-md-12 mt-3">
-                        <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
+                        <div><i class="fa-solid fa-location-dot"></i> <lable >Địa chỉ</lable>:</div>
                         <textarea th:field="*{address}" class="form-control mt-2" readonly></textarea>
                     </div>
                 </div>
             </div>
             <div class="card card-primary mt-3">
-                <div class="card-header"><i class="fa-solid fa-list"></i> <lable th:text="#{product.title}"></lable></div>
+                <div class="card-header"><i class="fa-solid fa-list"></i> <lable >Thông tin sản phầm</lable></div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -41,10 +41,10 @@
                             <th>Mã đơn</th>
                             <th>Mã SP</th>
                             <th>Image</th>
-                            <th><lable th:text="#{cart.name}"></lable></th>
-                            <th><lable th:text="#{cart.price}"></lable></th>
-                            <th><lable th:text="#{cart.qty}"></lable></th>
-                            <th><lable th:text="#{cart.amount}"></lable></th>
+                            <th>Tên sản phầm</th>
+                            <th>Giá tiền</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
                         </tr>
                     </thead>
                     <tbody>

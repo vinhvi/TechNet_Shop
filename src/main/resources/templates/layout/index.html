@@ -49,24 +49,15 @@
         <li th:block th:if="${#request.remoteUser}">
             <a style="text-decoration: none;" th:href="@{/orderHistory/list}">
                 <i class="fa-solid fa-clock-rotate-left icon"></i>
-                <label th:text="#{nav.order_history}"></label>
+                <label >Lịch sử đơn hàng</label>
             </a>
         </li>
-        <li class="nav-item  navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-language icon"></i> <label th:text="#{nav.language}"></label>
-            </a>
-            <ul class="dropdown-menu dropdown">
-                <li><a class="dropdown-item" id="btn_search" href="?lang=en">English</a></li>
-                <li><a class="dropdown-item" id="btn_search" href="?lang=vi">Việt Nam</a></li>
-            </ul>
-        </li>
+
 
         <li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
             <a style="text-decoration: none;" th:href="@{/admin/accounts/list}">
                 <i class="fa-solid fa-lock-open icon"></i>
-                <label th:text="#{nav.admin}"></label></a>
+                <label >Quản trị</label></a>
         </li>
         <th:block th:unless="${#request.remoteUser}">
             <li class="nav-item"><a class="nav-link item"
@@ -84,16 +75,16 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" id="btn_search" href="#!">
-                            <i class="fa-solid fa-gear"></i> [[#{nav.setting}]]</a>
+                            <i class="fa-solid fa-gear"></i> Cài đặt tài khoản</a>
                         <a class="dropdown-item" id="btn_search" th:href="@{|/info/${#request.remoteUser}|}">
-                            <i class="fa-solid fa-circle-user"></i> [[#{nav.infoAcc}]]</a>
+                            <i class="fa-solid fa-circle-user"></i> Thông tin tài khoản</a>
                         <a class="dropdown-item" id="btn_search" th:href="@{/favorite}">
-                            <i class="fa-brands fa-gratipay"></i> [[#{nav.Favorite}]]</a>
+                            <i class="fa-brands fa-gratipay"></i> Sản phẩm yêu thích</a>
                         <a class="dropdown-item" id="btn_search" th:href="@{/forgot_password}">
-                            <i class="fa-solid fa-pen-nib"></i> [[#{nav.change_password}]]</a>
+                            <i class="fa-solid fa-pen-nib"></i> Đổi mật khẩu</a>
                         <hr class="dropdown-divider" />
                         <a class="dropdown-item"id="btn_search" th:href="@{/security/logoff}">
-                            <i class="fa-solid fa-power-off"></i> [[#{nav.sign_out}]]</a>
+                            <i class="fa-solid fa-power-off"></i> Đăng xuất</a>
                     </div>
                 </div>
             </li>
